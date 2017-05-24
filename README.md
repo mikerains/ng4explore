@@ -6,4 +6,5 @@ Repo contains project folders each of which is a sample AngularN WebApp (N >=2) 
 
 <a href="https://angular.io/docs/ts/latest/guide/ngmodule.html" target="_blank">Ng Modules</a>
 
+[Ng Modules](https://angular.io/docs/ts/latest/guide/ngmodule.html "title" target="_blank")
 
