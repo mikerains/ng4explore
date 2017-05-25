@@ -11,4 +11,6 @@ Repo contains project folders each of which is a sample AngularN WebApp (N >=2) 
 4. Forms Generator
 5. Reactive Forms Generator
 6. AOT with https://www.npmjs.com/package/angular2-aot-webpack
+7. Secured with Facebook, Live and Google
+
 
