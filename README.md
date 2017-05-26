@@ -5,7 +5,7 @@ Repo contains project folders each of which is a sample AngularN WebApp (N >=2) 
 [Ng Modules](https://angular.io/docs/ts/latest/guide/ngmodule.html)
 
 # Phases
-10. Lazy-loaded Modules
+10. Lazy-loaded Modules with webpack loaders
 20. Nested State Routing
 30. Material Design
 40. Webpack sourcemaps debuggable in Chrome
