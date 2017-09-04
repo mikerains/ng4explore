@@ -18,7 +18,8 @@ I never did figure out how to deal with route maps when an XXX.html is in the UR
 ## 40. Webpack sourcemaps debuggable in Chrome
 ## 50. Forms Generator
 ## 60. Reactive Forms Generator
-## 70. AOT with https://www.npmjs.com/package/angular2-aot-webpack
+The angular.io "Techniques" section has a sub-section "Deployment", and on that page there is a heading "Ahead Of Time Compilcation".  (link: https://angular.io/guide/deployment#ahead-of-time-aot-compilation).  In that section, there is a link to "Webpack: An Introduction" (link: https://angular.io/guide/webpack) which proclaims "Webpack is a popular module bundler, a tool for bundling application source code in convenient chunks and for loading that code from a server into a browser.  It's an excellent alternative to the SystemJS approach used elsewhere in the documentation."
+
 ## 80. Secured with Facebook, Live and Google
 
 
