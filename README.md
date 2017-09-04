@@ -4,6 +4,8 @@ Repo contains project folders each of which is a sample AngularN WebApp (N >=2) 
 ### References
 [Ng Modules](https://angular.io/docs/ts/latest/guide/ngmodule.html)
 
+Compiler talk: https://www.youtube.com/watch?v=kW9cJsvcsGo
+
 # Phases
 ## 10. Lazy-loaded Modules with webpack loaders
 [NgModule 5 Example Projects](https://angular.io/docs/ts/latest/guide/ngmodule.html) - Look for "Live examples".  [The zip files are in this repo folder](.ExamplesFromAngujlar.io/ngModuleLiveExamples).  These examples gets into routing, so see also [Routing Tutorial](https://angular.io/docs/ts/latest/tutorial/toh-pt5.html) and [Routing & Navigation](https://angular.io/docs/ts/latest/guide/router.html).  One interesting section of Routing and Navigation is [Activated Routes](https://angular.io/docs/ts/latest/guide/router.html#!#activated-route) and [Appendix on parameters array](https://angular.io/docs/ts/latest/guide/router.html#!#link-parameters-array).
