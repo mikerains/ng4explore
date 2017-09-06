@@ -26,4 +26,7 @@ The angular.io "Techniques" section has a sub-section "Deployment", and on that 
 
 
 ## DevOps
-Angular.io WebPack overview: https://angular.io/guide/webpack
+Build with webpack, then deploy to Azure
+* Angular.io WebPack overview: https://angular.io/guide/webpack (example in ./angular.io/angular-webpack)
+* Azure AppService Deployment: https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-deploy
+
