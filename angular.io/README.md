@@ -6,6 +6,8 @@ Notes started Sep 01, 2017
    * This page has several downloads, look for the one in the section "Lazy-loading modules with the router"
 *  quickstart comes from https://angular.io/guide/setup
 * webpack-angular comes from https://angular.io/guide/webpack which has an example project https://angular.io/generated/zips/webpack/webpack.zip
+* lifecycle-hooks cmoes from https://angular.io/guide/lifecycle-hooks#lifecycle-examples
+
 
 
 # AOT (I wrote these same notes in github/com/mikerains/ng4explore/README.md)
