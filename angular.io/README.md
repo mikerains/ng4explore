@@ -13,6 +13,12 @@ Notes started Sep 01, 2017
 # AOT (I wrote these same notes in github/com/mikerains/ng4explore/README.md)
 The angular.io "Techniques" section has a sub-section "Deployment", and on that page there is a heading "Ahead Of Time Compilcation".  (link: https://angular.io/guide/deployment#ahead-of-time-aot-compilation).  In that section, there is a link to "Webpack: An Introduction" (link: https://angular.io/guide/webpack) which proclaims "Webpack is a popular module bundler, a tool for bundling application source code in convenient chunks and for loading that code from a server into a browser.  It's an excellent alternative to the SystemJS approach used elsewhere in the documentation."
 
+## AOT Webpack Plugin builds separate bundles for lazily-loaded route modules:
+Sept 5, 2017 I found this as linked from angular.io guide.
+* See https://github.com/angular/angular-cli/tree/master/packages/%40ngtools/webpack where it says:
+   * Recognizing the use of loadChildren in the router, and bundling those modules separately so that any dependencies of those modules are not going to be loaded as part of your main bundle. These separate bundles will be pulled out of the critical path of your application, making your total application bundle much smaller and loading it much more performant.
+
+
 ##  npm build:aot vs. ng build --aot vs. Angular Webpack and the Angular Webpack AOT plugin
 * npm build is for non CLI projects; it is a convenience script in package.json that compiles with tsc.
    * npm build:aot is a convenience script that compiles with ngc and uses the *-aot.json config files (ie: tsconfig-aot.json and rollup-config-aot.json)
