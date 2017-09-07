@@ -10,20 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var AppComponent = (function () {
-    function AppComponent(activatedRoute) {
-        this.activatedRoute = activatedRoute;
-        this.subtitle = '(v3)';
+var hero_service_1 = require("./hero.service");
+var user_service_1 = require("../user.service");
+var HeroComponent = (function () {
+    function HeroComponent(userService) {
+        this.userName = '';
+        this.userName = userService.userName;
     }
-    return AppComponent;
+    return HeroComponent;
 }());
-AppComponent = __decorate([
+HeroComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        template: "\n    <app-title [subtitle]=\"subtitle\"></app-title>\n    <h2>{{activatedRoute.url|json}}</h2>\n    <nav>\n      <a routerLink=\"contact\" routerLinkActive=\"active\">Contact</a>\n      <a routerLink=\"crisis\"  routerLinkActive=\"active\">Crisis Center</a>\n      <a routerLink=\"heroes\"  routerLinkActive=\"active\">Heroes</a>\n    </nav>\n    <router-outlet></router-outlet>\n  "
+        template: "\n    <h2>Heroes of {{userName}}</h2>\n    <router-outlet></router-outlet>\n  ",
+        providers: [hero_service_1.HeroService]
     }),
-    __metadata("design:paramtypes", [router_1.ActivatedRoute])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.3.js.map
+    __metadata("design:paramtypes", [user_service_1.UserService])
+], HeroComponent);
+exports.HeroComponent = HeroComponent;
+//# sourceMappingURL=hero.component.3.js.map

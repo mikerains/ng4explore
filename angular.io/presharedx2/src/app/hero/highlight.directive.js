@@ -10,20 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var AppComponent = (function () {
-    function AppComponent(activatedRoute) {
-        this.activatedRoute = activatedRoute;
-        this.subtitle = '(v3)';
+// Same directive name and selector as
+// HighlightDirective in parent AppRootModule
+// It selects for both input boxes and  'highlight' attr
+// and it highlights in beige instead of yellow
+var HighlightDirective = (function () {
+    function HighlightDirective(el) {
+        el.nativeElement.style.backgroundColor = 'beige';
+        console.log("* Hero highlight called for " + el.nativeElement.tagName);
     }
-    return AppComponent;
+    return HighlightDirective;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        template: "\n    <app-title [subtitle]=\"subtitle\"></app-title>\n    <h2>{{activatedRoute.url|json}}</h2>\n    <nav>\n      <a routerLink=\"contact\" routerLinkActive=\"active\">Contact</a>\n      <a routerLink=\"crisis\"  routerLinkActive=\"active\">Crisis Center</a>\n      <a routerLink=\"heroes\"  routerLinkActive=\"active\">Heroes</a>\n    </nav>\n    <router-outlet></router-outlet>\n  "
-    }),
-    __metadata("design:paramtypes", [router_1.ActivatedRoute])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.3.js.map
+HighlightDirective = __decorate([
+    core_1.Directive({ selector: '[highlight]' }),
+    __metadata("design:paramtypes", [core_1.ElementRef])
+], HighlightDirective);
+exports.HighlightDirective = HighlightDirective;
+//# sourceMappingURL=highlight.directive.js.map

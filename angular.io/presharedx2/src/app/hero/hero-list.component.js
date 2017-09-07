@@ -10,20 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var AppComponent = (function () {
-    function AppComponent(activatedRoute) {
-        this.activatedRoute = activatedRoute;
-        this.subtitle = '(v3)';
+var hero_service_1 = require("./hero.service");
+var HeroListComponent = (function () {
+    function HeroListComponent(heroService) {
+        this.heroService = heroService;
     }
-    return AppComponent;
+    HeroListComponent.prototype.ngOnInit = function () {
+        this.heroes = this.heroService.getHeroes();
+    };
+    return HeroListComponent;
 }());
-AppComponent = __decorate([
+HeroListComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        template: "\n    <app-title [subtitle]=\"subtitle\"></app-title>\n    <h2>{{activatedRoute.url|json}}</h2>\n    <nav>\n      <a routerLink=\"contact\" routerLinkActive=\"active\">Contact</a>\n      <a routerLink=\"crisis\"  routerLinkActive=\"active\">Crisis Center</a>\n      <a routerLink=\"heroes\"  routerLinkActive=\"active\">Heroes</a>\n    </nav>\n    <router-outlet></router-outlet>\n  "
+        template: "\n    <h3 highlight>Hero List</h3>\n    <div *ngFor='let hero of heroes | async'>\n      <a routerLink=\"{{hero.id}}\">{{hero.id}} - {{hero.name}}</a>\n    </div>\n  "
     }),
-    __metadata("design:paramtypes", [router_1.ActivatedRoute])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.3.js.map
+    __metadata("design:paramtypes", [hero_service_1.HeroService])
+], HeroListComponent);
+exports.HeroListComponent = HeroListComponent;
+//# sourceMappingURL=hero-list.component.js.map

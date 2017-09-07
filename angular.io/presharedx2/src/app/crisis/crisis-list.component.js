@@ -10,20 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var AppComponent = (function () {
-    function AppComponent(activatedRoute) {
-        this.activatedRoute = activatedRoute;
-        this.subtitle = '(v3)';
+var crisis_service_1 = require("./crisis.service");
+var CrisisListComponent = (function () {
+    function CrisisListComponent(crisisService) {
+        this.crisisService = crisisService;
     }
-    return AppComponent;
+    CrisisListComponent.prototype.ngOnInit = function () {
+        this.crisises = this.crisisService.getCrises();
+    };
+    return CrisisListComponent;
 }());
-AppComponent = __decorate([
+CrisisListComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        template: "\n    <app-title [subtitle]=\"subtitle\"></app-title>\n    <h2>{{activatedRoute.url|json}}</h2>\n    <nav>\n      <a routerLink=\"contact\" routerLinkActive=\"active\">Contact</a>\n      <a routerLink=\"crisis\"  routerLinkActive=\"active\">Crisis Center</a>\n      <a routerLink=\"heroes\"  routerLinkActive=\"active\">Heroes</a>\n    </nav>\n    <router-outlet></router-outlet>\n  "
+        template: "\n    <h3 highlight>Crisis List</h3>\n    <div *ngFor='let crisis of crisises | async'>\n      <a routerLink=\"{{'../' + crisis.id}}\">{{crisis.id}} - {{crisis.name}}</a>\n    </div>\n  "
     }),
-    __metadata("design:paramtypes", [router_1.ActivatedRoute])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.3.js.map
+    __metadata("design:paramtypes", [crisis_service_1.CrisisService])
+], CrisisListComponent);
+exports.CrisisListComponent = CrisisListComponent;
+//# sourceMappingURL=crisis-list.component.js.map

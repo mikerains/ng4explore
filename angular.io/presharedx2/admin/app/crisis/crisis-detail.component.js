@@ -11,19 +11,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var AppComponent = (function () {
-    function AppComponent(activatedRoute) {
-        this.activatedRoute = activatedRoute;
-        this.subtitle = '(v3)';
+var CrisisDetailComponent = (function () {
+    function CrisisDetailComponent(route) {
+        this.route = route;
     }
-    return AppComponent;
+    CrisisDetailComponent.prototype.ngOnInit = function () {
+        this.id = parseInt(this.route.snapshot.paramMap.get('id'), 10);
+    };
+    return CrisisDetailComponent;
 }());
-AppComponent = __decorate([
+CrisisDetailComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        template: "\n    <app-title [subtitle]=\"subtitle\"></app-title>\n    <h2>{{activatedRoute.url|json}}</h2>\n    <nav>\n      <a routerLink=\"contact\" routerLinkActive=\"active\">Contact</a>\n      <a routerLink=\"crisis\"  routerLinkActive=\"active\">Crisis Center</a>\n      <a routerLink=\"heroes\"  routerLinkActive=\"active\">Heroes</a>\n    </nav>\n    <router-outlet></router-outlet>\n  "
+        template: "\n    <h3 highlight>Crisis Detail</h3>\n    <div>Crisis id: {{id}}</div>\n    <br>\n    <a routerLink=\"../list\">Crisis List</a>\n  "
     }),
     __metadata("design:paramtypes", [router_1.ActivatedRoute])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.3.js.map
+], CrisisDetailComponent);
+exports.CrisisDetailComponent = CrisisDetailComponent;
+//# sourceMappingURL=crisis-detail.component.js.map

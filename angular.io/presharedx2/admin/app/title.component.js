@@ -10,20 +10,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var AppComponent = (function () {
-    function AppComponent(activatedRoute) {
-        this.activatedRoute = activatedRoute;
-        this.subtitle = '(v3)';
+var user_service_1 = require("./user.service");
+var TitleComponent = (function () {
+    function TitleComponent(userService) {
+        this.subtitle = '';
+        this.title = 'Heroes Admin ';
+        this.user = '';
+        this.user = userService.userName;
     }
-    return AppComponent;
+    return TitleComponent;
 }());
-AppComponent = __decorate([
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], TitleComponent.prototype, "subtitle", void 0);
+TitleComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        template: "\n    <app-title [subtitle]=\"subtitle\"></app-title>\n    <h2>{{activatedRoute.url|json}}</h2>\n    <nav>\n      <a routerLink=\"contact\" routerLinkActive=\"active\">Contact</a>\n      <a routerLink=\"crisis\"  routerLinkActive=\"active\">Crisis Center</a>\n      <a routerLink=\"heroes\"  routerLinkActive=\"active\">Heroes</a>\n    </nav>\n    <router-outlet></router-outlet>\n  "
+        selector: 'app-title',
+        templateUrl: './title.component.html',
     }),
-    __metadata("design:paramtypes", [router_1.ActivatedRoute])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.3.js.map
+    __metadata("design:paramtypes", [user_service_1.UserService])
+], TitleComponent);
+exports.TitleComponent = TitleComponent;
+//# sourceMappingURL=title.component.js.map
