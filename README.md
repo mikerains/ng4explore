@@ -15,6 +15,11 @@ I never did figure out how to deal with route maps when an XXX.html is in the UR
   { path: 'index.3.html', redirectTo: 'contact', pathMatch: 'full'},
 ```
 
+### AOT Webpack Plugin builds separate bundles for lazily-loaded route modules:
+Sept 5, 2017 I found this as linked from angular.io guide.
+* See https://github.com/angular/angular-cli/tree/master/packages/%40ngtools/webpack where it says:
+   * Recognizing the use of loadChildren in the router, and bundling those modules separately so that any dependencies of those modules are not going to be loaded as part of your main bundle. These separate bundles will be pulled out of the critical path of your application, making your total application bundle much smaller and loading it much more performant.
+
 ## 20. Nested State Routing
 ## 30. Material Design
 ## 40. Webpack sourcemaps debuggable in Chrome
